@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NovaDroid — Poster</title>
+<style>
+  :root{
+    --ink:#0B1520;
+    --panel:#101D2E;
+    --line: rgba(232, 227, 216, 0.14);
+    --paper:#ECE7DA;
+    --paper-dim: rgba(236,231,218,0.62);
+    --amber:#FFB000;
+    --amber-dim: rgba(255,176,0,0.35);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:#05090F;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+  }
+
+  .poster{
+    width:1200px;
+    height:1697px;
+    background:
+      radial-gradient(1100px 700px at 78% -6%, rgba(255,176,0,0.10), transparent 60%),
+      var(--ink);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+    font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* faint scanline texture */
+  .poster::before{
+    content:"";
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.014) 0px,
+      rgba(255,255,255,0.014) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+    pointer-events:none;
+  }
+
+  .border-frame{
+    position:absolute;
+    inset:36px;
+    border:1px solid var(--line);
+    pointer-events:none;
+  }
+  .border-frame::before, .border-frame::after,
+  .corner-tl, .corner-br{
+    content:"";
+    position:absolute;
+    width:18px; height:18px;
+  }
+  .corner{
+    position:absolute;
+    width:22px; height:22px;
+    border:1.5px solid var(--amber);
+  }
+  .corner.tl{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
+  .corner.tr{ top:-1px; right:-1px; border-left:none; border-bottom:none; }
+  .corner.bl{ bottom:-1px; left:-1px; border-right:none; border-top:none; }
+  .corner.br{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+
+  .content{
+    position:relative;
+    z-index:2;
+    padding:78px 84px 56px 84px;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+  }
+
+  /* top status bar */
+  .statusbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-size:13px;
+    letter-spacing:0.06em;
+    color:var(--paper-dim);
+    border-bottom:1px solid var(--line);
+    padding-bottom:18px;
+    margin-bottom:64px;
+  }
+  .statusbar .dot{
+    color:var(--amber);
+    margin-right:8px;
+  }
+
+  /* hero */
+  .hero{
+    position:relative;
+  }
+  .prompt-line{
+    font-size:17px;
+    color:var(--amber);
+    margin-bottom:18px;
+    letter-spacing:0.02em;
+  }
+  .prompt-line span{ color:var(--paper-dim); }
+
+  h1{
+    margin:0;
+    font-size:118px;
+    line-height:0.94;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    color:var(--paper);
+    font-family: 'IBM Plex Mono', 'JetBrains Mono', 'Courier New', monospace;
+  }
+  h1 .cursor{
+    display:inline-block;
+    width:0.46em;
+    height:0.82em;
+    background:var(--amber);
+    margin-left:14px;
+    transform:translateY(6px);
+  }
+
+  .tagline{
+    margin-top:26px;
+    font-size:23px;
+    color:var(--paper-dim);
+    max-width:620px;
+    line-height:1.5;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style:italic;
+  }
+
+  /* bridge diagram */
+  .bridge{
+    position:absolute;
+    top:6px;
+    right:0;
+    width:400px;
+    height:300px;
+  }
+
+  /* feature terminal block */
+  .terminal{
+    margin-top:72px;
+    border:1px solid var(--line);
+    background:rgba(255,255,255,0.015);
+    padding:0;
+  }
+  .terminal .bar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 18px;
+    border-bottom:1px solid var(--line);
+    font-size:12px;
+    color:var(--paper-dim);
+    letter-spacing:0.08em;
+  }
+  .terminal .bar .chip{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--amber-dim);
+  }
+  .feature-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+  }
+  .feature-grid > div{
+    padding:22px 30px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    font-size:16.5px;
+    line-height:1.5;
+  }
+  .feature-grid > div:nth-child(2n){
+    border-right:none;
+  }
+  .feature-grid > div:nth-last-child(-n+2){
+    border-bottom:none;
+  }
+  .feature-grid .arrow{
+    color:var(--amber);
+    margin-right:10px;
+  }
+  .feature-grid .label{
+    color:var(--paper);
+    font-weight:600;
+  }
+  .feature-grid .desc{
+    display:block;
+    color:var(--paper-dim);
+    font-size:14px;
+    margin-top:4px;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+
+  /* command block */
+  .cmd-block{
+    margin-top:44px;
+    display:flex;
+    gap:44px;
+  }
+  .cmd{
+    flex:1;
+    font-size:15px;
+    color:var(--paper-dim);
+  }
+  .cmd .line{ margin-bottom:8px; }
+  .cmd .p{ color:var(--amber); margin-right:10px; }
+  .cmd .comment{ color: rgba(236,231,218,0.38); }
+
+  .spacer{ flex:1; }
+
+  /* footer */
+  footer{
+    margin-top:56px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    font-size:13px;
+    color:var(--paper-dim);
+    letter-spacing:0.02em;
+  }
+  footer .left{ line-height:1.7; }
+  footer .left b{ color:var(--paper); font-weight:600; }
+  footer .right{
+    text-align:right;
+    line-height:1.7;
+  }
+  footer .tag{
+    display:inline-block;
+    border:1px solid var(--amber-dim);
+    color:var(--amber);
+    padding:3px 10px;
+    font-size:12px;
+    letter-spacing:0.08em;
+    margin-bottom:8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+  <div class="border-frame">
+    <span class="corner tl"></span>
+    <span class="corner tr"></span>
+    <span class="corner bl"></span>
+    <span class="corner br"></span>
+  </div>
+
+  <div class="content">
+
+    <div class="statusbar">
+      <div><span class="dot">●</span>ADB SESSION — ACTIVE</div>
+      <div>ANDROID_SERIAL: emulator‑5554</div>
+      <div>BUILD v2.3</div>
+    </div>
+
+    <div class="hero">
+      <svg class="bridge" viewBox="0 0 400 300" fill="none">
+        <!-- phone -->
+        <rect x="18" y="30" width="70" height="130" rx="8" stroke="#FFB000" stroke-opacity="0.55" stroke-width="1.5"/>
+        <line x1="34" y1="45" x2="72" y2="45" stroke="#FFB000" stroke-opacity="0.4" stroke-width="1.5"/>
+        <line x1="34" y1="120" x2="72" y2="120" stroke="#FFB000" stroke-opacity="0.25" stroke-width="1.5"/>
+        <circle cx="53" cy="145" r="4" stroke="#FFB000" stroke-opacity="0.4" stroke-width="1.5"/>
+        <!-- terminal -->
+        <rect x="280" y="150" width="104" height="76" rx="4" stroke="#ECE7DA" stroke-opacity="0.3" stroke-width="1.5"/>
+        <path d="M292 168 l10 8 l-10 8" stroke="#FFB000" stroke-opacity="0.55" stroke-width="1.5" fill="none"/>
+        <line x1="308" y1="184" x2="330" y2="184" stroke="#FFB000" stroke-opacity="0.4" stroke-width="1.5"/>
+        <!-- bridge path -->
+        <path d="M88 90 C 160 90, 150 40, 220 40 S 300 90, 332 150" stroke="#FFB000" stroke-opacity="0.5" stroke-width="1.4" stroke-dasharray="2 6" fill="none"/>
+        <circle cx="220" cy="40" r="3" fill="#FFB000" fill-opacity="0.7"/>
+        <text x="150" y="20" fill="#ECE7DA" fill-opacity="0.4" font-size="11" font-family="monospace">wifi / usb bridge</text>
+      </svg>
+
+      <div class="prompt-line">~/android <span>$</span> adb devices <span>│</span> 1 connected</div>
+      <h1>NovaDroid<span class="cursor"></span></h1>
+      <div class="tagline">Own the device. Every way that matters.</div>
+    </div>
+
+    <div class="terminal">
+      <div class="bar"><span class="chip"></span>FEATURES.LOG — 64 MODULES LOADED</div>
+      <div class="feature-grid">
+        <div><span class="arrow">›</span><span class="label">Mirror &amp; control</span><span class="desc">See and drive the screen live, over USB or Wi‑Fi.</span></div>
+        <div><span class="arrow">›</span><span class="label">Data extraction</span><span class="desc">Pull SMS, contacts, call logs, files, camera rolls.</span></div>
+        <div><span class="arrow">›</span><span class="label">App management</span><span class="desc">Install, inspect, suspend, or strip any package.</span></div>
+        <div><span class="arrow">›</span><span class="label">Camera &amp; mic streaming</span><span class="desc">Live front/back video and live audio capture.</span></div>
+        <div><span class="arrow">›</span><span class="label">Full Metasploit chain</span><span class="desc">Automated payload → install → meterpreter session.</span></div>
+        <div><span class="arrow">›</span><span class="label">Wireless ADB &amp; scanning</span><span class="desc">Pair over network, sweep LAN for open ADB hosts.</span></div>
+      </div>
+    </div>
+
+    <div class="cmd-block">
+      <div class="cmd">
+        <div class="line"><span class="comment"># clone &amp; run</span></div>
+        <div class="line"><span class="p">$</span>git clone github.com/rV9Cy/NovaDroid.git</div>
+        <div class="line"><span class="p">$</span>cd NovaDroid &amp;&amp; python3 novadroid.py</div>
+      </div>
+      <div class="cmd">
+        <div class="line"><span class="comment"># requires</span></div>
+        <div class="line">python 3.10+ · adb · scrcpy · nmap · metasploit‑framework</div>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <footer>
+      <div class="left">
+        Educational use only. Use on devices you own, or with explicit authorization.<br>
+        <b>Disclaimer</b> — the developers are not responsible for misuse.
+      </div>
+      <div class="right">
+        <span class="tag">FORK · REBRAND</span><br>
+        Originally <b>PhoneSploit Pro</b> by Azeem Idrisi — github.com/AzeemIdrisi<br>
+        Maintained by <b>@rV9Cy</b> — github.com/rV9Cy
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+</body>
+</html>
