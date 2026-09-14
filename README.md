@@ -12,8 +12,7 @@
 ![Python](https://img.shields.io/badge/python-v3.10%2B-blue)
 ![GitHub Repo stars](https://img.shields.io/github/stars/rV9Cy/NovaDroid?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/rV9Cy/NovaDroid?style=social)
-![Telegram rv9Cy](https://t.me/rv8cy)
-![Telegram Spidey Team "rV9Cy"](https://t.mr/spideyteam7)
+
 
 </div>
 
