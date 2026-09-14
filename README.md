@@ -45,7 +45,7 @@
 
 ## پوستر
 
-![POSTER](docs/images/novadroid-poster.png)
+![POSTER](images/novadroid-poster.png)
 
 ---
 
