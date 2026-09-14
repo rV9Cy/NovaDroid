@@ -467,20 +467,11 @@ pkg install nmap
 
 </a>
 
-**Azeem Idrisi** - [@AzeemIdrisi](https://github.com/azeemidrisi/)
+
 *(خالق اصلی PhoneSploit Pro، پروژه‌ای که این fork بر پایه اون ساخته شده)*
 
 **نگهداری‌کننده fork / بازطراحی** - [@rV9Cy](https://github.com/rV9Cy)
 
-## حمایت
-
-اگه از کارم خوشت اومد، می‌تونی از این راه‌ها حمایت کنی:
-
-<a href="https://paypal.me/AzeemIdrisi" target="_blank"> <kbd> <img
-        src="https://github.com/AzeemIdrisi/AzeemIdrisi/blob/main/docs/paypal-button-blue.png" alt="PayPal"
-        width="147"></a> <a href="https://www.buymeacoffee.com/AzeemIdrisi" target="_blank"> <kbd> <img src="https://github.com/AzeemIdrisi/AzeemIdrisi/blob/main/docs/default-yellow.png" alt="Buy Me A Coffee" width="200"></a>
-
----
 
 ## منابع مورد استفاده
 
@@ -495,5 +486,6 @@ NovaDroid بر پایه پروژه‌های متن‌باز زیر ساخته ش
 - [`python-nmap`](https://pypi.org/project/python-nmap/) — python-nmap
 
 <hr>
+با عشق تقدیم به شما نسخه ترجمه شده
 
 کپی‌رایت © 2026 Azeem Idrisi (github.com/AzeemIdrisi)
