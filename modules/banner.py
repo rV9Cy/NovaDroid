@@ -20,10 +20,10 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Forking and modifying are allowed, but credit must be given to the
-original developer, [Azeem Idrisi (github.com/AzeemIdrisi)], and copying the code
+original developer, [ rvn cyber (github.com/rV9Cy)], and copying the code
 is not permitted without permission.
 
-For any queries, Contact me at : azeemidrisiofficial@gmail.com
+For any queries, Contact me at : @gmail.com
 """
 
 version = "v2.3"
@@ -68,7 +68,7 @@ banner2 = """
         ░█─── ▀──▀ ▀▀▀▀ ▀──▀ ▀▀▀ ░█▄▄▄█ █▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀ ──▀── 　 ░█─── ▀─▀▀ ▀▀▀▀
 
 
-            [bold red]{version}[/bold red]            [bold white]By github.com/AzeemIdrisi[/bold white]
+            [bold red]{version}[/bold red]            [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner3 = """
@@ -76,7 +76,7 @@ banner3 = """
         █▀▀ █▀█ █▄█ █░▀█ ██▄ ▄█ █▀▀ █▄▄ █▄█ █ ░█░   █▀▀ █▀▄ █▄█
 
 
-            [bold red]{version}[/bold red]             [bold white]By github.com/AzeemIdrisi[/bold white]
+            [bold red]{version}[/bold red]             [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner4 = """
@@ -88,7 +88,7 @@ banner4 = """
                   \\/            \\/     \\/        \\/ |__|
 
 
-        [bold red]{version}[/bold red]                             [bold white]By github.com/AzeemIdrisi[/bold white]
+        [bold red]{version}[/bold red]                             [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner5 = """
@@ -98,7 +98,7 @@ banner5 = """
     /_/  /_//_/\\___/_//_/\\__/___/ .__/_/\\___/_/\\__/  /_/  /_/  \\___/
                                /_/
 
-        [bold red]{version}[/bold red]        [bold white]By github.com/AzeemIdrisi[/bold white]
+        [bold red]{version}[/bold red]        [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner6 = """
@@ -109,7 +109,7 @@ banner6 = """
     /_/   /_/ /_/\\____/_/ /_/\\___/____/ .___/_/\\____/_/\\__/    /_/   /_/   \\____/
                                      /_/
 
-           [bold red]{version}[/bold red]               [bold white]By github.com/AzeemIdrisi[/bold white]
+           [bold red]{version}[/bold red]               [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner10 = """
@@ -123,7 +123,7 @@ banner10 = """
                                                          \\ \\_\\
                                                           \\/_/
 
-            [bold red]{version}[/bold red]                                [bold white]By github.com/AzeemIdrisi[/bold white]
+            [bold red]{version}[/bold red]                                [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner11 = """
@@ -135,7 +135,7 @@ banner11 = """
                                             /_/
 
 
-            [bold red]{version}[/bold red]                            [bold white]By github.com/AzeemIdrisi[/bold white]
+            [bold red]{version}[/bold red]                            [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner12 = """
@@ -144,7 +144,7 @@ banner12 = """
         ▒█░░░ ▀░░▀ ▀▀▀▀ ▀░░▀ ▀▀▀ ▒█▄▄▄█ █▀▀▀ ▀▀▀ ▀▀▀▀ ▀▀▀ ░░▀░░ 　 ▒█░░░ ▀░▀▀ ▀▀▀▀
 
 
-            [bold red]{version}[/bold red]                            [bold white]By github.com/AzeemIdrisi[/bold white]
+            [bold red]{version}[/bold red]                            [bold white]By github.com/rV9Cy[/bold white]
 """.format(version=version)
 
 banner_list = [
