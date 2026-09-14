@@ -43,9 +43,9 @@
 
 ---
 
-## اسکرین‌شات‌ها
+## پوستر
 
-![Screenshot](docs/images/Screenshot-1.png)
+![POSTER](docs/images/novadroid-poster.png)
 
 ---
 
